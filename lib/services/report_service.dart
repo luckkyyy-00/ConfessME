@@ -1,5 +1,4 @@
 import 'package:cloud_functions/cloud_functions.dart';
-import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ReportService {
@@ -25,9 +24,9 @@ class ReportService {
         throw Exception('Server-side report failed');
       }
 
-      debugPrint('Report submitted successfully via Cloud Function');
+      // debugPrint('Report submitted successfully via Cloud Function');
     } catch (e) {
-      debugPrint('Error reporting confession: $e');
+      // debugPrint('Error reporting confession: $e');
       rethrow;
     }
 

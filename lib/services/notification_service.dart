@@ -11,7 +11,7 @@ import '../models/notification_settings.dart';
 /// Background message handler (must be top-level function)
 @pragma('vm:entry-point')
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-  debugPrint('Background message received: ${message.messageId}');
+  // debugPrint('Background message received: ${message.messageId}');
 }
 
 class NotificationService {

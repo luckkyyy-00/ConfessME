@@ -90,9 +90,9 @@ class DatabaseService {
         throw Exception('Server-side verification failed');
       }
 
-      debugPrint('Confession highlighted successfully via Cloud Function');
+      // debugPrint('Confession highlighted successfully via Cloud Function');
     } catch (e) {
-      debugPrint('Error highlighting confession: $e');
+      // debugPrint('Error highlighting confession: $e');
       throw Exception('Failed to highlight confession: $e');
     }
   }
@@ -269,9 +269,9 @@ class DatabaseService {
         'purchaseToken': purchaseToken,
       });
 
-      debugPrint('Paid confession credit added via Cloud Function for $userId');
+      // debugPrint('Paid confession credit added via Cloud Function for $userId');
     } catch (e) {
-      debugPrint('Error adding paid confession credit: $e');
+      // debugPrint('Error adding paid confession credit: $e');
       rethrow;
     }
   }

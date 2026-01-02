@@ -205,7 +205,7 @@ exports.verifyPurchase = functions.https.onCall(async (data, context) => {
         isTop: true,
         highlightedBy: userId,
       });
-      console.log(`Highlighted confession ${confessionId} for user ${userId}`);
+// console.log(`Highlighted confession ${confessionId} for user ${userId}`);
 
     } else if (productId === 'paid_confession_10') {
       // Credit Purchase (e.g., 10 credits or similar)

@@ -50,7 +50,13 @@ class AdService {
       request: const AdRequest(),
       adLoadCallback: InterstitialAdLoadCallback(
         onAdLoaded: (ad) {
-          debugPrint('Interstitial Ad loaded');
+          // debugPrint('Interstitial Ad loaded');
+          // ...
+          // debugPrint('Interstitial Ad failed to load: $error');
+          // ...
+          // debugPrint('Ad skipped: Cooldown active');
+          // ...
+          // debugPrint('Ad skipped: Not loaded yet');
           _interstitialAd = ad;
           _isInterstitialLoading = false;
           _interstitialAd!.fullScreenContentCallback =

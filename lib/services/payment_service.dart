@@ -57,7 +57,7 @@ class PaymentService {
       debugPrint('Products not found: ${response.notFoundIDs}');
     }
 
-    print("Billing: Loaded products: ${response.productDetails}"); // QUICK TEST
+    // debugPrint("Billing: Loaded products: ${response.productDetails}");
     _products = response.productDetails;
   }
 

@@ -47,29 +47,29 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBMrzFJdId5AIMsJPrKdkLlbY3oEF7SFJc',
-    appId: '1:424688717766:web:0e6e3218773ab544edacc7',
-    messagingSenderId: '424688717766',
-    projectId: 'confess-9cf0d',
-    authDomain: 'confess-9cf0d.firebaseapp.com',
-    storageBucket: 'confess-9cf0d.firebasestorage.app',
-    measurementId: 'G-DVD1R0HBN7',
+    apiKey: 'YOUR_WEB_API_KEY',
+    appId: 'YOUR_WEB_APP_ID',
+    messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
+    projectId: 'YOUR_PROJECT_ID',
+    authDomain: 'YOUR_AUTH_DOMAIN',
+    storageBucket: 'YOUR_STORAGE_BUCKET',
+    measurementId: 'YOUR_MEASUREMENT_ID',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBkiY9378Jlkh3sfw58P-4eyem0sEZU25A',
-    appId: '1:424688717766:android:50acd88467e48327edacc7',
-    messagingSenderId: '424688717766',
-    projectId: 'confess-9cf0d',
-    storageBucket: 'confess-9cf0d.firebasestorage.app',
+    apiKey: 'YOUR_ANDROID_API_KEY',
+    appId: 'YOUR_ANDROID_APP_ID',
+    messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
+    projectId: 'YOUR_PROJECT_ID',
+    storageBucket: 'YOUR_STORAGE_BUCKET',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBSMM2UVoCWoKFWR6w9K2y25-762GVWoag',
-    appId: '1:424688717766:ios:19abe50c129dff15edacc7',
-    messagingSenderId: '424688717766',
-    projectId: 'confess-9cf0d',
-    storageBucket: 'confess-9cf0d.firebasestorage.app',
-    iosBundleId: 'com.confess.app.confessApp',
+    apiKey: 'YOUR_IOS_API_KEY',
+    appId: 'YOUR_IOS_APP_ID',
+    messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
+    projectId: 'YOUR_PROJECT_ID',
+    storageBucket: 'YOUR_STORAGE_BUCKET',
+    iosBundleId: 'YOUR_IOS_BUNDLE_ID',
   );
 }

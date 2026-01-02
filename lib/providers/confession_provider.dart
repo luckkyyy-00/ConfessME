@@ -185,7 +185,7 @@ class ConfessionProvider with ChangeNotifier {
         }
       }
     } catch (e) {
-      debugPrint('Location detection failed: $e');
+      // debugPrint('Location detection failed: $e');
     }
   }
 

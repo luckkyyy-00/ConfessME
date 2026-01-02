@@ -33,6 +33,7 @@ Thumbs.db
 # Large Folders
 node_modules/
 **/node_modules/
+symbols/
 
 # Secrets
 .env
