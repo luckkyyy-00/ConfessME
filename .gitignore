@@ -1,0 +1,39 @@
+# Flutter/Dart
+.dart_tool/
+.build/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+
+# Android
+android/key.properties
+**/*.jks
+**/*.keystore
+android/app/google-services.json
+
+# iOS
+ios/Runner/GoogleService-Info.plist
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/App.framework
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large Folders
+node_modules/
+**/node_modules/
+
+# Secrets
+.env
+*.env

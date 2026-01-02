@@ -1,0 +1,59 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // 🔐 USERS
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+      // Allow creation if user doesn't exist yet (for anonymous login flow)
+      allow create: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // 🛡️ SECURITY TOKENS (SERVER ONLY)
+    match /used_tokens/{tokenId} {
+      allow read, write: if false;
+    }
+
+    // 📝 CONFESSIONS
+    match /confessions/{confessionId} {
+      allow read: if request.auth != null;
+      
+      // Allow Create - Authenticated users can post
+      allow create: if request.auth != null && request.resource.data.userId == request.auth.uid;
+
+      // Allow Update - Authenticated users can update ONLY specific stats
+      // CRITICAL SECURITY: We EXCLUDE 'isHighlighted', 'highlightEndTime', 'isTop', 'highlightedBy'
+      // These must ONLY be updated via Cloud Functions after payment verification.
+      allow update: if request.auth != null && (
+        request.resource.data.diff(resource.data).affectedKeys()
+          .hasOnly(['reactionCounts', 'reportCount'])
+      );
+      
+      allow delete: if false;
+    }
+
+    // ❤️ REACTIONS
+    match /reactions/{reactionId} {
+      allow read: if request.auth != null;
+      
+      // Allow Create/Update (set merge) - Users can manage their own reactions
+      // We allow 'write' which covers create, update, and delete for the owner
+      allow write: if request.auth != null && (
+        (request.resource.data.userId == request.auth.uid) || 
+        (resource.data.userId == request.auth.uid)
+      );
+    }
+
+    // 🚨 REPORTS
+    match /reports/{reportId} {
+      allow create: if request.auth != null;
+      allow read: if false; // Only admins/server should read reports
+      allow write: if false;
+    }
+
+    // 💰 PAYMENTS (SERVER ONLY)
+    match /payments/{paymentId} {
+      allow read, write: if false;
+    }
+  }
+}
